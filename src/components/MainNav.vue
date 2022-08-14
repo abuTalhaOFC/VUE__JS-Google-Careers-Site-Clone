@@ -27,7 +27,7 @@
         <!-- SignIn btn start -->
         <div class="flex items-center h-full ml-auto">
           <profile-image v-if="isLogedIn" @click="handelClick" />
-          <action-button v-else @click="handelClick" />
+          <action-button text="Sign in" v-else @click="handelClick" />
         </div>
         <!-- SignIn btn end -->
       </div>
