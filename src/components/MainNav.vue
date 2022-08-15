@@ -24,7 +24,7 @@
           </ul>
         </nav>
         <!-- Nav menu end -->
-        <!-- SignIn btn start -->
+        <!-- SignIn btn & profile img start -->
         <div class="flex items-center h-full ml-auto">
           <profile-image v-if="isLogedIn" @click="handelClick" />
           <action-button
@@ -34,7 +34,7 @@
             @click="handelClick"
           />
         </div>
-        <!-- SignIn btn end -->
+        <!-- SignIn btn & profile img end -->
       </div>
     </div>
   </header>
