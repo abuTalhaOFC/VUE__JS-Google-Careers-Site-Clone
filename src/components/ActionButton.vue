@@ -7,12 +7,26 @@
 <script>
 export default {
   name: "ActionButton",
-  props: ["text", "type"],
+  props: {
+    text: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: false,
+      default: "primary",
+      validator(value) {
+        return ["primary", "secondary"].includes(value);
+      },
+    },
+  },
   computed: {
     btnClass() {
       return {
-        primary: this.type === "primary",
-        secondary: this.type === "secondary",
+        // primary: this.type === "primary",
+        // secondary: this.type === "secondary",
+        [this.type]: true,
       };
     },
   },
@@ -21,7 +35,7 @@ export default {
 
 <style scoped>
 button {
-  @apply px-5 py-3 font-medium;
+  @apply px-5 py-3 rounded font-medium;
 }
 .primary {
   @apply text-white  rounded bg-brand-blue-1 hover:shadow-blue;
