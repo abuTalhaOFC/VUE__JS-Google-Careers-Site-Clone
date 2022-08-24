@@ -28,9 +28,9 @@
         <div class="flex items-center h-full ml-auto">
           <profile-image v-if="isLogedIn" @click="handelClick" />
           <action-button
+            v-else
             type="primary"
             text="Sign in"
-            v-else
             @click="handelClick"
           />
         </div>
@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import ActionButton from "./ActionButton.vue";
-import ProfileImage from "./ProfileImage.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
+import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import SubNav from "./SubNav.vue";
 
 export default {
