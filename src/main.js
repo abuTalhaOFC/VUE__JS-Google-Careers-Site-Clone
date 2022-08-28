@@ -10,7 +10,13 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 /* import specific icons */
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
+// add router
+import router from "./router";
+
 /* add icons to the library */
 library.add(faSearch);
 
-createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
+createApp(App)
+  .use(router)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount("#app");

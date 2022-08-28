@@ -5,21 +5,25 @@
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
         <!-- Company Logo Start -->
-        <a :href="url" class="flex items-center h-full text-xl">{{
-          company
-        }}</a>
+        <router-link
+          :to="{ name: 'Home' }"
+          class="flex items-center h-full text-xl"
+          >Google Careers</router-link
+        >
         <!-- Company Logo end -->
         <!-- Nav menu start -->
         <nav class="h-full ml-12">
           <ul class="flex h-full m-0 p-0 list-none">
             <li
               v-for="menuItem in menuItems"
-              :key="menuItem"
+              :key="menuItem.text"
               class="h-full ml-9 first:ml-0"
             >
-              <a href="" class="flex items-center h-full py-2.5">{{
-                menuItem
-              }}</a>
+              <router-link
+                :to="menuItem.url"
+                class="flex items-center h-full py-2.5"
+                >{{ menuItem.text }}</router-link
+              >
             </li>
           </ul>
         </nav>
@@ -56,15 +60,19 @@ export default {
   },
   data() {
     return {
-      company: "Google Careers",
-      url: "https://react.protalha.com",
       menuItems: [
-        "Teams",
-        "Location",
-        "Life at PRO",
-        "How we hire",
-        "Students",
-        "Jobs",
+        // "Teams",
+        // "Location",
+        // "Life at PRO",
+        // "How we hire",
+        // "Students",
+        // "Jobs",
+        { text: "Teams", url: "/" },
+        { text: "Location", url: "/" },
+        { text: "Life at PRO", url: "/" },
+        { text: "How we hire", url: "/" },
+        { text: "Students", url: "/" },
+        { text: "Jobs", url: "/job/result" },
       ],
       isLogedIn: false,
     };
