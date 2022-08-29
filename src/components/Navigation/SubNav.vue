@@ -1,6 +1,9 @@
 <template>
   <div class="w-full h-16 bg-white border-b border-solid border-brand-gray-1">
-    <div class="flex items-center h-full px-8">
+    <div
+      v-if="onJobResultPageOnly"
+      class="flex items-center h-full px-8"
+    >
       <div>
         <font-awesome-icon
           :icon="['fas', 'search']"
@@ -14,6 +17,12 @@
 
 <script>
 export default{
-  name:"SubNav"
+  name:"SubNav",
+  computed:{
+    onJobResultPageOnly(){
+     return this.$route.name === "JobResult"
+      
+    }
+  }
 }
 </script>

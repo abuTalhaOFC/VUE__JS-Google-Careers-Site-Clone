@@ -3,7 +3,7 @@
     type="text"
     :value="value"
     :placeholder="placeholder"
-    class="w-full h-full text-lg font-normal border-b-2 border-b-transparent hover:border-brand-blue-2 focus:outline-none   focus:border-brand-blue-2"
+    class="w-full h-full text-lg font-normal focus:outline-none"
     @input="sentInputToParent"
   >
 </template>

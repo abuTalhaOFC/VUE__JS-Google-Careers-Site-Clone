@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import Headline from '@/components/Headline.vue'
-import JobSearchFrom from '@/components/JobSearchFrom.vue';
+import Headline from '@/components/JobSearch/Headline.vue'
+import JobSearchFrom from '@/components/JobSearch/JobSearchFrom.vue';
 export default{
   name:"Hero",
   components: { Headline, JobSearchFrom }

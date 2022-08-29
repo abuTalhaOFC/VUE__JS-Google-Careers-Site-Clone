@@ -5,8 +5,8 @@
       class="ml-4 mr-3"
     />
 
-    <div class="flex flex-nowrap flex-1 h-full text-base font-light">
-      <div class="relative flex items-center flex-1 h-full  ">
+    <div class="flex flex-nowrap flex-1 h-full text-base font-light ">
+      <div class="relative flex items-center flex-1 h-full  border-b-2 border-b-transparent hover:border-brand-blue-2      ">
         <label class="absolute left-0 -top-10">Role</label>
         <!-- <input
           v-model="role"
@@ -23,7 +23,7 @@
       <span
         class="flex items-center h-full px-3 border-l border-r text-brand-gray-3 border-brand-gray-3 bg-brand-gray-2"
       >in</span>
-      <div class="relative flex items-center flex-1 h-full ml-3  box-content ">
+      <div class="relative flex items-center flex-1 h-full pl-3    border-b-2 border-b-transparent hover:border-brand-blue-2     ">
         <label class="absolute  left-0 -top-10">Where?</label>
         <!-- <input
           v-model="location"
@@ -48,8 +48,8 @@
 
 
 <script>
-import ActionButton from "@/components/ActionButton.vue"
-import TextInput from "@/components/TextInput.vue"
+import ActionButton from "@/components/Shared/ActionButton.vue"
+import TextInput from "@/components/Shared/TextInput.vue"
 
 export default{
   name: "JobSearchFrom",
