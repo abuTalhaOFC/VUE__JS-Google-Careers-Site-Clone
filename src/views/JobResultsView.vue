@@ -12,8 +12,8 @@ export default {
 
   computed: {
     consolRout() {
-      console.log(this.$route);
-      console.log(this.$router);
+      // console.log(this.$route);
+      // console.log(this.$router);
 
       return "Consol Working Well";
     },
