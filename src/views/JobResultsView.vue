@@ -1,22 +1,20 @@
 <template>
-  <div class="flex flex-col text-lg text-brand-green-1">
-    <h1>This is an JOb Result page page</h1>
-
-    <h3>{{ consolRout }}</h3>
+  <div class="flex flex-row flex-nowrap w-full">
+    <job-filter-sidebar />
+    <job-listings />
   </div>
 </template>
 
 <script>
+import JobListings from "@/components/JobResult/JobListings.vue";
+import JobFilterSidebar from "@/components/JobResult/JobFilterSidebar/JobFilterSidebar.vue";
+
 export default {
   name: "JobResultsView",
 
-  computed: {
-    consolRout() {
-      // console.log(this.$route);
-      // console.log(this.$router);
-
-      return "Consol Working Well";
-    },
+  components: {
+    JobListings,
+    JobFilterSidebar,
   },
 };
 </script>
