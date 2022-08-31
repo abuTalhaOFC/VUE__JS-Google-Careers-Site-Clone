@@ -1,5 +1,8 @@
 <template>
-  <form class="flex h-12 w-full items-center border border-solid border-brand-gray-1 rounded-3xl mt-14">
+  <form
+    class="flex h-12 w-full items-center border border-solid border-brand-gray-1 rounded-3xl mt-14"
+    @submit.prevent="goToJobResultVue"
+  >
     <font-awesome-icon
       :icon="['fas', 'search']"
       class="ml-4 mr-3"
@@ -74,6 +77,12 @@ export default{
         this.location = payload
         
     },
+    goToJobResultVue(){
+          this.$router.push({
+            name: "JobResult",
+            query: {role: this.role, location: this.location}
+          })
+    }
   }
 
 }
