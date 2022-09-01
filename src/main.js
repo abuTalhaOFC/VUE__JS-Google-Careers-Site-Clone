@@ -16,6 +16,8 @@ import {
 
 // add router
 import router from "./router";
+// Add vuex store
+import store from "./store";
 
 /* add icons to the library */
 library.add(faSearch);
@@ -23,6 +25,7 @@ library.add(faMountainCity);
 library.add(faLocationDot);
 
 createApp(App)
+  .use(store)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");

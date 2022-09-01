@@ -74,7 +74,6 @@ export default {
         { text: "Students", url: "/" },
         { text: "Jobs", url: "/job/result" },
       ],
-      isLogedIn: false,
     };
   },
   computed: {
@@ -84,10 +83,17 @@ export default {
         "h-32": this.isLogedIn,
       };
     },
+    isLogedIn() {
+      return this.$store.state.isLogedIn;
+    },
   },
   methods: {
     handelClick() {
-      this.isLogedIn ? (this.isLogedIn = false) : (this.isLogedIn = true);
+      // this.isLogedIn ? (this.isLogedIn = false) : (this.isLogedIn = true);
+
+      !this.$store.state.isLogedIn
+        ? this.$store.commit("LOGIN_USER")
+        : this.$store.commit("LOGOUT_USER");
     },
   },
 };
