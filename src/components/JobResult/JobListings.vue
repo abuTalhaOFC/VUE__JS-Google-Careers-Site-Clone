@@ -1,5 +1,5 @@
 <template>
-  <main class="flex-auto p-8 bg-brand-gray-2">
+  <main v-if="jobs.length > 0" class="flex-auto p-8 bg-brand-gray-2">
     <ol>
       <job-listing v-for="job in jobsIncludeTen" :key="job.id" :job="job" />
     </ol>
@@ -25,16 +25,24 @@
       </div>
     </div>
   </main>
+  <div
+    v-if="jobs.length < 1"
+    class="flex-auto p-8 bg-brand-gray-2 mx-11 w-full h-screen"
+  >
+    <job-linting-skeleton />
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 import JobListing from "@/components/JobResult/JobListing.vue";
+import JobLintingSkeleton from "@/components/JobResult/JobLintingSkeleton.vue";
 
 export default {
   name: "JobListings",
   components: {
     JobListing,
+    JobLintingSkeleton,
   },
   data() {
     return {
@@ -63,6 +71,11 @@ export default {
       return this.jobs.slice(startingPage, endingPage);
     },
   },
+  // pley
+  // beforeMount(){
+  //     return "loading"
+  // },
+  // play
   async mounted() {
     const response = await axios.get("http://localhost:3000/jobs");
     this.jobs = response.data;
