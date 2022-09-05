@@ -34,9 +34,10 @@
 </template>
 
 <script>
-import axios from "axios";
 import JobListing from "@/components/JobResult/JobListing.vue";
 import JobLintingSkeleton from "@/components/JobResult/JobLintingSkeleton.vue";
+import { mapState } from "vuex";
+import { FATCH_JOBS } from "@/store";
 
 export default {
   name: "JobListings",
@@ -44,11 +45,11 @@ export default {
     JobListing,
     JobLintingSkeleton,
   },
-  data() {
-    return {
-      jobs: [],
-    };
-  },
+  // data() {
+  //   return {
+  //     jobs: [],
+  //   };
+  // },
   computed: {
     currentPage() {
       const pageNumberStr = this.$route.query.page || "1";
@@ -70,15 +71,11 @@ export default {
 
       return this.jobs.slice(startingPage, endingPage);
     },
+    ...mapState(["jobs"]),
   },
-  // pley
-  // beforeMount(){
-  //     return "loading"
-  // },
-  // play
+
   async mounted() {
-    const response = await axios.get("http://localhost:3000/jobs");
-    this.jobs = response.data;
+    this.$store.dispatch(FATCH_JOBS);
   },
 };
 </script>
