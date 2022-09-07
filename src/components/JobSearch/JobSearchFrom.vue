@@ -44,6 +44,7 @@
     <action-button
       text="Search"
       type="secondary"
+      class="rounded-r-3xl"
     />
   </form>
 </template>

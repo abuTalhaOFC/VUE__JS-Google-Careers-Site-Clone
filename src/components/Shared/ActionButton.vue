@@ -21,6 +21,10 @@ export default {
       },
     },
   },
+
+  //props end 
+
+  
   computed: {
     btnClass() {
       return {
@@ -41,6 +45,6 @@ button {
   @apply text-white  rounded bg-brand-blue-1 hover:shadow-blue;
 }
 .secondary {
-  @apply text-brand-blue-1 rounded-r-3xl bg-transparent hover:text-white hover:bg-brand-blue-2 hover:shadow-blue z-10;
+  @apply text-brand-blue-1  bg-transparent hover:text-white hover:bg-brand-blue-2 hover:shadow-blue z-10;
 }
 </style>

@@ -10,13 +10,16 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import { faSearch, faMountainCity,
-  faLocationDot, } from '@fortawesome/free-solid-svg-icons'
+  faLocationDot, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
 
 import router from './router'
+import store from './store'
 
 /* add icons to the library */
 library.add(faSearch)
 library.add(faMountainCity);
 library.add(faLocationDot);
+library.add(faAngleDown);
+library.add(faAngleUp);
 
-createApp(App).use(router).component('font-awesome-icon', FontAwesomeIcon).mount("#app");
+createApp(App).use(store).use(router).component('font-awesome-icon', FontAwesomeIcon).mount("#app");

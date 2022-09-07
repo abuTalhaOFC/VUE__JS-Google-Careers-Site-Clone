@@ -36,13 +36,13 @@
         <div class="flex items-center h-full ml-auto">
           <profile-image
             v-if="isLogedIn"
-            @click="handelClick"
+            @click="LOGIN_USER"
           />
           <action-button
             v-else
             type="primary"
             text="Sign in"
-            @click="handelClick"
+            @click="LOGIN_USER"
           />
         </div>
         <!-- SignIn btn & profile img end -->
@@ -56,6 +56,9 @@
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import SubNav from "@/components/Navigation/SubNav.vue";
+import {LOGIN_USER} from "@/store"
+import {mapState, mapMutations} from "vuex"
+
 
 export default {
   name: "MainNav",
@@ -82,7 +85,7 @@ export default {
         {text: "Students", url: "/"},
         {text: "Jobs", url: "/job/result"},
       ],
-      isLogedIn: false,
+      
     };
   },
   computed:{
@@ -92,12 +95,18 @@ export default {
     "h-32": this.isLogedIn,
     }
 
-   }
+   },
+  //  isLogedIn(){
+  //       return this.$store.state.isLogedIn
+  //  }
+   ...mapState(["isLogedIn"])
   },
   methods: {
-    handelClick() {
-      this.isLogedIn ? (this.isLogedIn = false) : (this.isLogedIn = true);
-    },
+    // handelClick() {
+    //         this.$store.commit(LOGEDIN_USER)
+    // },
+    ...mapMutations([LOGIN_USER]),
   },
+  
 };
 </script>

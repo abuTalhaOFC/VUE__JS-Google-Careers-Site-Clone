@@ -33,20 +33,28 @@
 </template>
 
 <script>
-import axios from "axios"
+
+import { mapState } from "vuex";
+import { FATCH_JOBS } from "@/store";
 
 import JobListing from '@/components/JobResutl/JobListing.vue';
+
 
 export default{
     name: "JobListings",
     components: {
         JobListing,
     },
-    data(){
-      return{
-        jobs: []
-      }
-    },
+    // data(){
+    //   return{
+    //     jobs: []
+    //   }
+    // },
+
+
+    //computed poperty start__________________
+
+
     computed: {
       currentPageNumber(){
         const currentPageNumberStr = this.$route.query.page|| 1
@@ -67,11 +75,15 @@ export default{
         const pageStarting = (this.currentPageNumber - 1) *10
         const pageEnding = this.currentPageNumber  *10
          return this.jobs.slice(pageStarting, pageEnding)
-      }
+      },
+      ...mapState(["jobs"]),
     },
-    async mounted(){
-      const res = await axios.get("http://localhost:3000/jobs")
-       this.jobs = res.data
-    }
+
+    // computede poperty end____________
+
+
+  async mounted() {
+    this.$store.dispatch(FATCH_JOBS);
+  },
   }
 </script>
