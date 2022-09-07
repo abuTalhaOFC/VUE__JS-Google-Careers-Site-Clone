@@ -69,7 +69,7 @@ export default {
         // "How we hire",
         // "Students",
         // "Jobs",
-        { text: "Teams", url: "/" },
+        { text: "Teams", url: "/teams" },
         { text: "Location", url: "/" },
         { text: "Life at PRO", url: "/" },
         { text: "How we hire", url: "/" },

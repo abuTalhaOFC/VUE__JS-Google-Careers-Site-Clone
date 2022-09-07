@@ -12,6 +12,8 @@ import {
   faSearch,
   faMountainCity,
   faLocationDot,
+  faAngleUp,
+  faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 // add router
@@ -23,6 +25,8 @@ import store from "./store";
 library.add(faSearch);
 library.add(faMountainCity);
 library.add(faLocationDot);
+library.add(faAngleUp);
+library.add(faAngleDown);
 
 createApp(App)
   .use(store)
