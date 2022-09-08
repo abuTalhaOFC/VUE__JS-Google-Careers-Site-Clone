@@ -1,6 +1,13 @@
 <template>
-  <input
+  <!-- <input
     :value="value"
+    type="text"
+    :placeholder="placeholder"
+    class="w-full text-lg font-normal focus:outline-none"
+    @input="handelInput"
+  /> -->
+  <input
+    v-model="value"
     type="text"
     :placeholder="placeholder"
     class="w-full text-lg font-normal focus:outline-none"
@@ -24,8 +31,11 @@ export default {
     };
   },
   methods: {
-    handelInput(e) {
-      this.value = e.target.value;
+    // handelInput(e) {
+    //   this.value = e.target.value;
+    //   this.$emit("handelInput", this.value);
+    // },
+    handelInput() {
       this.$emit("handelInput", this.value);
     },
   },
